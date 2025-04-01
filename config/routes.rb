@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :customers, skip: [:passwords], controllers: {
+    registrations: "public/registrations",
+    sessions: "public/sessions"
+  }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :admin, skip: [:passwords, :registrations], controllers: {
+    sessions: "admin/sessions"
+  }
 end
