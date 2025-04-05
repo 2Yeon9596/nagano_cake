@@ -19,6 +19,9 @@
       <%= link_to "ログイン", new_customer_session_path %>
     <% end %>  
     </header>
+    <div>
+      <%= flash[:notice] %>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     get "customers/info/edit" => "customers#edit"
     patch "customers/info" => "customers#update"
     get "customers/unsubscribe" => "customers#unsubscribe"
-    get "customers/confirm" => "customers#confirm"
-    patch "customers/withdraw" => "/customers#withdraw"
+    patch "customers/withdraw" => "customers#withdraw"
     resources :cart_items, only: [:create, :index, :update, :destroy]
     delete "cart_items/destroy_all" => "cart_items#destroy_all"
     resources :addresses, only: [:create, :index, :edit, :update, :destroy]
