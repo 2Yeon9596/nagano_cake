@@ -1,0 +1,65 @@
+ja:
+ activerecord:
+  models:
+     address: 配送先
+      admin: 管理者
+      cart_item: カート内商品
+      customer: 顧客
+      genre: ジャンル
+      item: 商品
+      order_detail: 注文履歴
+      order: 注文
+    attributes:
+      addresses:
+        name: 宛名
+        postal_code: 郵便番号
+        address: 住所
+        customer_id: 顧客ID
+        created_at: 作成日
+        updated_at: 更新日
+      cart_items:
+        amount: 数量
+        item_id: 商品ID
+        customer_id: 顧客ID
+        created_at: 作成日
+        updated_at: 更新日
+      customers: 
+       last_name: 姓
+       first_name: 名
+       last_name_kana: セイ
+       first_name_kana: メイ
+       postal_code: 郵便番号  
+       address: 住所
+        telephone_number: 電話番号
+        is_active: 退会ステータス
+        created_at: 作成日
+        updated_at: 更新日
+      genres:
+        name: ジャンル名
+        created_at: 作成日
+        updated_at: 更新日
+      items:
+       name: 商品名
+       introduction: 商品説明
+       price: 商品価格
+       is_active: 販売ステータス
+       genre_id: ジャンルID
+       created_at: 作成日
+       updated_at: 更新日
+      order_details:
+        price: 商品価格
+        amount: 数量
+        making_status: 製作ステータス
+        order_id: 注文ID
+        item_id: 商品ID
+        created_at: 作成日
+        updated_at: 更新日
+      orders:
+        postal_code: 郵便番号
+        address: 住所
+        name: 宛名
+        shipping_cost: 送料
+        total_payment: 請求額
+        payment_method: 支払方法
+        status: 発送ステータス
+        customer_id: 顧客ID

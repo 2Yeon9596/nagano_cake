@@ -1,13 +1,13 @@
-<h1>商品新規登録</h1>
+<h1>商品編集</h1>
 
 <% if @item.errors.any? %>
-  <%= @item.errors.count %>件のエラーが発生しました
+  <%= @item.errors.count %>件のエラーが発生しました<br>
   <%= @item.errors.full_messages.each do |message| %>
-    <%= message %>
+    <%= message %><br>
   <% end %>
 <% end %>      
 
-<%= form_with model: @item, url: admin_items_path do |f| %>
+<%= form_with model: @item, url: admin_item_path(@item) do |f| %>
   <%= f.label :image, "商品画像" %>
   <%= f.file_field :image, accept: "image/*" %><br>
   <%= f.label :name, "商品名" %>
@@ -23,5 +23,5 @@
   <%= f.label :is_active_true, "販売中" %>
   <%= f.radio_button :is_active, :false %>
   <%= f.label :is_active_false, "販売停止中" %><br>
-  <%= f.submit "新規登録" %><br>
+  <%= f.submit "変更を保存" %><br>
 <% end %>  
