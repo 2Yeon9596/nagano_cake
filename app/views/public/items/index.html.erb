@@ -1,1 +1,18 @@
-<h1>顧客Item#index</h1>
+<h1>商品一覧(全<%= @items.count %>件)</h1>
+<div>
+  <% @items.each do |item| %>
+  <table>
+    <tr>
+      <%= link_to item_path(item.id) do %>
+        <%= image_tag item.image, class: "resize-image" %>
+      <% end %>
+    </tr>
+    <tr>
+      <%= item.name %>
+    </tr>  
+    <tr>
+       ¥<%= item.price_with_tax %>
+    </tr>
+  </table>  
+  <% end %>  
+</div>

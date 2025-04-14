@@ -11,13 +11,7 @@ module NaganoCake
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    # 日本語化
-    config.i18n.available_locales = %i[ja en]
-    config.i18n.default_locale = :ja
-
-    # 複数のロケールファイルが読み込まれるようpathを通す
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
-
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

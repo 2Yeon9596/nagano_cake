@@ -15,6 +15,8 @@ class Item < ApplicationRecord
 
   def price_with_tax
     (price * (1 + TAX_RATE)).floor
-  end  
+  end 
+
+  has_many :cart_items
   
 end

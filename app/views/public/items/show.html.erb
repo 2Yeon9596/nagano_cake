@@ -1,1 +1,10 @@
-<h1>顧客Item#show</h1>
+<%= image_tag @item.image, class: "resize-image" %><br>
+<%= @item.name %><br>
+<%= @item.introduction %><br>
+<%= number_to_currency(@item.price_with_tax, unit: "¥", precision: 0) %>(税込)<br>
+
+<%= form_with model: @cart_item_new, url: cart_items_path do |f| %>
+  <%= f.select :amount, *[1..10] %>
+  <%= f.hidden_field :item_id, :value => @item.id %>
+  <%= f.submit "カートに入れる" %>
+<% end %>
