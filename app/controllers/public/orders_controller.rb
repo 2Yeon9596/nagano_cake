@@ -2,6 +2,13 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
 
   def new
+    @order = Order.new
+    @customer = current_customer
+  end
+
+  def comfirm
+    @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
   end
 
   def create
@@ -13,8 +20,7 @@ class Public::OrdersController < ApplicationController
   def show
   end
   
-  def comfirm
-  end
+  
   
   def complete
   end
